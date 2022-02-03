@@ -5,8 +5,8 @@ public enum IntersectionType {
 
     private String description;
 
-    IntersectionType(String overlapDescription){
-        this.description = overlapDescription;
+    IntersectionType(String intersectionDescription){
+        this.description = intersectionDescription;
     }
 
     public String getDescription(){
