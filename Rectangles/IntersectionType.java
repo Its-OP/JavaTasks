@@ -1,5 +1,5 @@
 public enum IntersectionType {
-    SinglePoint("Single point"),
+    NoIntersection("No Intersection"),
     HorizontalLine("Horizontal Line"),
     SomethingElse("Something Else");
 

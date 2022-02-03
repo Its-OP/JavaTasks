@@ -15,15 +15,11 @@ class Program{
                 (firstRec.rightX > secondRec.leftX && firstRec.leftX < secondRec.leftX))
         ){return IntersectionType.HorizontalLine;}
         else if(
-            //If the opposite horizontal sides of two rectangles are located on the same Y-level
-            ((firstRec.bottomY == secondRec.topY || firstRec.topY == secondRec.bottomY) &&
-                //And the opposite points of two rectangles coincide
-                (firstRec.rightX == secondRec.leftX || firstRec.leftX == secondRec.rightX)) ||
-            //Or the opposite vertical sides of two rectangles are located on the same X-level
-            ((firstRec.leftX == secondRec.rightX || firstRec.rightX == secondRec.leftX) &&
-                //And the opposite points of two rectangles coincide
-                (firstRec.topY == secondRec.bottomY || firstRec.bottomY == secondRec.topY))
-        ){return IntersectionType.SinglePoint;}
+            firstRec.rightX < secondRec.leftX ||
+            firstRec.leftX > secondRec.rightX ||
+            firstRec.topY < secondRec.bottomY ||
+            firstRec.bottomY > secondRec.topY
+        ){return IntersectionType.NoIntersection;}
         else{
             return IntersectionType.SomethingElse;
         }
