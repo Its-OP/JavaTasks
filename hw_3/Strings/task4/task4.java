@@ -5,9 +5,7 @@ class Program{
         int requiredLength = 7;
         String[] words = input.split(" ");
         for(int i = 0; i < words.length; i++){
-            if(words[i].length() >= requiredLength){
-                words[i] = words[i].substring(0, requiredLength-1) + subString + words[i].substring(Math.min(words[i].length()-1, requiredLength), words[i].length()-1);
-            }
+            words[i] = words[i].replaceAll(String.format("(?<=^.{%s})", requiredLength), subString);
         }
         String newString = String.join(" ", words);
         System.out.println(newString);
